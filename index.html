@@ -483,6 +483,40 @@ a{color:#882345}a:hover{color:#5C1530}
 <h2 style="margin: 0 0 12px; font-family: 'Source Serif 4', Georgia, serif; font-size: 38px; line-height: 1.15">Get paid to do research</h2>
 <p style="margin: 0 0 28px; max-width: 760px; color: #4A433D">Fellowships, grants, paid assistantships and travel funding at Brooklyn College, across CUNY, and beyond, with deadlines and eligibility in one directory.</p>
 
+<div style="background: #FFFFFF; border-top: 5px solid #EBB700; padding: 28px; margin-bottom: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 18px">
+<div style="flex: 1 1 520px">
+<h3 style="margin: 0 0 6px; font-family: 'Source Serif 4', Georgia, serif; font-size: 28px">Economics Department scholarships</h3>
+<p style="margin: 0; font-size: 16px; color: #4A433D">Brooklyn College awards these scholarships each year specifically to economics students. Apply through the Brooklyn College scholarship portal; each listing links to its full requirements.</p>
+</div>
+<div role="group" aria-label="Filter scholarships" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ scholTabs }}" as="t" hint-placeholder-count="3">
+<sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="true" style="font: inherit; font-size: 15px; font-weight: 700; min-height: 44px; padding: 0 16px; background: #882345; color: #FFFFFF; border: 1px solid #882345; border-radius: 999px; cursor: pointer">{{ t.label }}</button>
+</sc-if>
+<sc-if value="{{ t.inactive }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ t.pick }}" aria-pressed="false" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 16px; background: #FFFFFF; color: #2B2622; border: 1px solid #B8ACA0; border-radius: 999px; cursor: pointer">{{ t.label }}</button>
+</sc-if>
+</sc-for>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{ scholarships }}" as="s" hint-placeholder-count="6">
+<div style="border: 1px solid #E4DCD2; padding: 20px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #5E564F">{{ s.level }}</span>
+<span style="font-size: 14px; font-weight: 700; padding: 3px 10px; background: #FBEFC2; color: #5C3D00">{{ s.award }}</span>
+</div>
+<strong style="font-size: 18px; line-height: 1.3">{{ s.name }}</strong>
+<span style="font-size: 15px; color: #4A433D">{{ s.who }}</span>
+<a href="{{ s.url }}" target="_blank" rel="noopener" style="margin-top: auto; padding-top: 6px; font-size: 15px; font-weight: 700">Requirements and application ↗</a>
+</div>
+</sc-for>
+</div>
+<p style="margin: 16px 0 0; font-size: 14px; color: #5E564F">Award amounts and the number of recipients vary by year. Several awards consider financial need, so make sure your FAFSA is on file. Questions? Contact Marsha Turner in the Economics office, 718.951.5153.</p>
+</div>
+
+<h3 style="margin: 0 0 14px; font-size: 20px">More research funding and fellowships</h3>
 <div role="group" aria-label="Filter funding" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px">
 <sc-for list="{{ fundTabs }}" as="t" hint-placeholder-count="5">
 <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
@@ -614,6 +648,19 @@ const FUND = [
 {name:"[Summer research fellowship]",sponsor:"[Brooklyn College]",who:"[Eligibility]",faculty:"[Yes/No]",deadline:"[DATE]",tags:["bc","summer"],url:"#",target:"_self"},
 {name:"[Conference travel & publication funding]",sponsor:"[Brooklyn College]",who:"[Presenting students]",faculty:"Yes",deadline:"[DATE]",tags:["bc","travel"],url:"#",target:"_self"}
 ];
+const SX = "https://cunybrooklyn.scholarships.ngwebsolutions.com/ScholarX_Scholarship_Reqs.aspx?RoundId=0&AvailabilityId=";
+const SCHOL = [
+{name:"Abraham & Yetta Chiswick Scholarship in Economics",level:"Undergraduate",award:"Up to $4,000",who:"Juniors majoring in Economics (not the BBA Business Economics concentration) who graduated from a Brooklyn high school, with a GPA of 3.5 or higher. Up to two recipients.",id:"134226"},
+{name:"Leonard Elterman '43 Memorial Scholarship",level:"Undergraduate",award:"$3,000",who:"An Economics major, with preference for a highly motivated junior or senior with a GPA of 3.75 or higher for whom financial help would make a real difference.",id:"97452"},
+{name:"Bertram Fields '42 Scholarship",level:"Undergraduate",award:"Paper prize",who:"Awarded to the authors of the two best papers on economic forecasting, following Congressional Budget Office and Council of Economic Advisers guidelines. Economics majors who aren't graduating seniors; judged by Economics faculty.",id:"97473"},
+{name:"Bernard R. Kornhaber '49 Memorial Award",level:"Undergraduate",award:"Senior award",who:"Outstanding seniors majoring in Economics (including Macaulay Honors), with a GPA of 3.0 or higher.",id:"97676"},
+{name:"Daniel M. Lyons '39 Prize in Economics or Business",level:"Undergraduate",award:"Prize",who:"Economics majors in excellent academic standing (GPA 3.5 or higher), typically juniors, who plan careers in economics or business.",id:"97732"},
+{name:"Susan and Zachary Solomon Scholarship",level:"Undergraduate",award:"Full or half tuition",who:"Outstanding Economics majors with demonstrated financial need and a GPA of 3.5 or higher. Not open to graduating seniors.",id:"97956"},
+{name:"Morris and Sadie Wertheimer Memorial Scholarship",level:"Undergraduate",award:"Renewable",who:"An Economics major in good academic standing with a GPA of 3.0 or higher. Renewable for up to three more years.",id:"98017"},
+{name:"Rose Goldstein Memorial Scholarship",level:"Graduate",award:"Up to $5,000",who:"M.S. in Business Administration – Economic Analysis students with demonstrated financial need. Not open to students in their final term.",id:"97556"},
+{name:"Monte and Arline Gordon Scholarship",level:"Graduate",award:"Scholarship",who:"Students in good academic standing in the M.S. in Business Administration – Economic Analysis program.",id:"97566"}
+].map(s => Object.assign({}, s, { url: SX + s.id }));
+const STABS = [["all","All (9)"],["Undergraduate","Undergraduate (7)"],["Graduate","Graduate (2)"]];
 const TABS = [["all","All"],["bc","Brooklyn College"],["cuny","CUNY"],["ext","External"],["summer","Summer"],["travel","Travel & conferences"]];
 const FACULTY = [
 {name:"Nadia Doytch",title:"Professor · Graduate Deputy, Economic Analysis M.S.",areas:"International trade and FDI, environmental and natural resource economics, sustainability. Also on the CUNY Graduate Center Ph.D. faculty.",office:"217 Whitehead Hall · 718.951.5153",email:"ndoytch@brooklyn.cuny.edu",slug:"nadia-doytch"},
@@ -624,10 +671,13 @@ const FACULTY = [
 {name:"Marc Fox",title:"Associate Professor",areas:"Principles of macroeconomics and microeconomics.",office:"203C Whitehead Hall · ext. 2083",email:"mfox@brooklyn.cuny.edu",slug:"marc-fox"}
 ].map(p => Object.assign({}, p, { mail: "mailto:" + p.email, url: "https://www.brooklyn.edu/faculty-staff/" + p.slug + "/" }));
 class Component extends DCLogic {
-constructor(props){ super(props); this.state = { fund: "all", sent: false, grad: "ms" }; }
+constructor(props){ super(props); this.state = { fund: "all", sent: false, grad: "ms", schol: "all" }; }
 renderVals() {
 const f = this.state.fund;
+const sc = this.state.schol;
 return {
+scholarships: SCHOL.filter(s => sc === "all" || s.level === sc),
+scholTabs: STABS.map(t => ({ label: t[1], active: sc === t[0], inactive: sc !== t[0], pick: () => this.setState({ schol: t[0] }) })),
 faculty: FACULTY,
 showMS: this.state.grad === "ms",
 showPhD: this.state.grad === "phd",
