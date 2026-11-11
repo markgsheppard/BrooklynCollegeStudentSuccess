@@ -1,9 +1,7 @@
 /* Simple password overlay for the draft site. Not real security: it hides the page from casual visitors. */
 (function () {
   var PASSWORD = "brooklyn2026";
-  var KEY = "bc-econ-draft-unlocked";
-  function unlocked() { try { return sessionStorage.getItem(KEY) === "1"; } catch (e) { return false; } }
-  if (unlocked()) return;
+  try { sessionStorage.removeItem("bc-econ-draft-unlocked"); } catch (e) {}
 
   var style = document.createElement("style");
   style.textContent =
@@ -40,7 +38,6 @@
       var v = pw.value.trim().toLowerCase();
       if (!v) { err.textContent = "Enter the password first."; return; }
       if (v !== PASSWORD) { err.textContent = "That password isn't right. Try again."; pw.select(); return; }
-      try { sessionStorage.setItem(KEY, "1"); } catch (e2) {}
       gate.remove();
       style.remove();
       document.documentElement.classList.remove("gate-on");
