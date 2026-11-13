@@ -457,8 +457,7 @@ a{color:#882345}a:hover{color:#5C1530}
 </ol>
 
 <h3 style="margin: 0 0 6px; font-size: 20px">Where to submit</h3>
-<p style="margin: 0; font-size: 15px; color: #5E564F">Deadlines shown are the usual timing. Confirm the current call for papers before you submit.</p>
-<h4 style="margin: 28px 0 14px; font-size: 17px; letter-spacing: 0.4px; color: #5E564F">At your college and across CUNY</h4>
+<p style="margin: 0 0 16px; font-size: 15px; color: #5E564F">Start at your own college, then look outward. Deadlines shown are the usual timing; confirm the current call for papers before you submit.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
 <div style="border: 1px solid #E4DCD2; border-top: 5px solid #EBB700; padding: 22px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">BROOKLYN COLLEGE · PROPOSED</span>
@@ -473,6 +472,8 @@ a{color:#882345}a:hover{color:#5C1530}
 <a href="https://academicworks.cuny.edu/submit_research.html" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Submit your research ↗</a>
 </div>
 </div>
+<sc-if value="{{ pubT.open }}" hint-placeholder-val="{{ false }}">
+<div>
 <h4 style="margin: 28px 0 14px; font-size: 17px; letter-spacing: 0.4px; color: #5E564F">Undergraduate economics journals</h4>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
 <div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
@@ -533,6 +534,18 @@ a{color:#882345}a:hover{color:#5C1530}
 <a href="https://www.nyseconomicsassociation.org" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Competition details ↗</a>
 </div>
 </div>
+</div>
+</sc-if>
+<sc-if value="{{ pubT.show }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; justify-content: center; margin-top: 14px">
+<sc-if value="{{ pubT.closed }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ pubT.flip }}" aria-expanded="false" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 8px; background: none; border: 0; color: #882345; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">Show 9 journals, competitions and conferences <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,5 7,10 12,5"/></svg></button>
+</sc-if>
+<sc-if value="{{ pubT.open }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ pubT.flip }}" aria-expanded="true" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 8px; background: none; border: 0; color: #882345; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">Show fewer <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,9 7,4 12,9"/></svg></button>
+</sc-if>
+</div>
+</sc-if>
 </section>
 
 <!-- 6. Funding -->
@@ -572,6 +585,16 @@ a{color:#882345}a:hover{color:#5C1530}
 </div>
 </sc-for>
 </div>
+<sc-if value="{{ scholT.show }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; justify-content: center; margin-top: 12px">
+<sc-if value="{{ scholT.closed }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ scholT.flip }}" aria-expanded="false" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 8px; background: none; border: 0; color: #882345; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">Show all {{ scholT.total }} scholarships <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,5 7,10 12,5"/></svg></button>
+</sc-if>
+<sc-if value="{{ scholT.open }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ scholT.flip }}" aria-expanded="true" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 8px; background: none; border: 0; color: #882345; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">Show fewer <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,9 7,4 12,9"/></svg></button>
+</sc-if>
+</div>
+</sc-if>
 <p style="margin: 16px 0 0; font-size: 14px; color: #5E564F">Award amounts and the number of recipients vary by year. Several awards consider financial need, so make sure your FAFSA is on file. Questions? Contact Marsha Turner in the Economics office, 718.951.5153.</p>
 </div>
 
@@ -606,6 +629,16 @@ a{color:#882345}a:hover{color:#5C1530}
 <span>{{ r.sponsor }}</span><span>{{ r.who }}</span><span>{{ r.award }}</span><span>{{ r.deadline }}</span>
 </div>
 </sc-for>
+<sc-if value="{{ fundT.show }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; justify-content: center; margin-top: 10px">
+<sc-if value="{{ fundT.closed }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ fundT.flip }}" aria-expanded="false" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 8px; background: none; border: 0; color: #882345; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">Show all {{ fundT.total }} <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,5 7,10 12,5"/></svg></button>
+</sc-if>
+<sc-if value="{{ fundT.open }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ fundT.flip }}" aria-expanded="true" style="font: inherit; font-size: 15px; font-weight: 600; min-height: 44px; padding: 0 8px; background: none; border: 0; color: #882345; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">Show fewer <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,9 7,4 12,9"/></svg></button>
+</sc-if>
+</div>
+</sc-if>
 </div>
 </div>
 </div>
@@ -747,12 +780,15 @@ const FACULTY = [
 {name:"Marc Fox",title:"Associate Professor",areas:"Principles of macroeconomics and microeconomics.",office:"203C Whitehead Hall · ext. 2083",email:"mfox@brooklyn.cuny.edu",slug:"marc-fox"}
 ].map(p => Object.assign({}, p, { mail: "mailto:" + p.email, url: "https://www.brooklyn.edu/faculty-staff/" + p.slug + "/" }));
 class Component extends DCLogic {
-constructor(props){ super(props); this.state = { fund: "all", sent: false, grad: "ms", schol: "all", fac: "any", captcha: false, capErr: false }; }
+constructor(props){ super(props); this.state = { fund: "all", sent: false, grad: "ms", schol: "all", fac: "any", captcha: false, capErr: false, fundOpen: false, pubOpen: false, scholOpen: false }; }
 renderVals() {
 const f = this.state.fund;
 const sc = this.state.schol;
+const fundAll = FUND.filter(r => f === "all" || r.tags.indexOf(f) > -1);
+const scholAll = SCHOL.filter(s => sc === "all" || s.level === sc);
+const tog = (key, total, limit) => ({ show: total > limit, open: !!this.state[key], closed: !this.state[key], total: total, flip: () => this.setState({ [key]: !this.state[key] }) });
 return {
-scholarships: SCHOL.filter(s => sc === "all" || s.level === sc),
+scholarships: scholAll.slice(0, this.state.scholOpen ? scholAll.length : 3),
 scholTabs: STABS.map(t => ({ label: t[1], active: sc === t[0], inactive: sc !== t[0], pick: () => this.setState({ schol: t[0] }) })),
 faculty: FACULTY,
 showMS: this.state.grad === "ms",
@@ -760,8 +796,11 @@ showPhD: this.state.grad === "phd",
 pickMS: () => this.setState({ grad: "ms" }),
 pickPhD: () => this.setState({ grad: "phd" }),
 featured: FEATURED,
-fundTabs: TABS.map(t => ({ label: t[1], active: f === t[0], inactive: f !== t[0], pick: () => this.setState({ fund: t[0] }) })),
-fundRows: FUND.filter(r => f === "all" || r.tags.indexOf(f) > -1),
+fundTabs: TABS.map(t => ({ label: t[1], active: f === t[0], inactive: f !== t[0], pick: () => this.setState({ fund: t[0], fundOpen: false }) })),
+fundRows: fundAll.slice(0, this.state.fundOpen ? fundAll.length : 5),
+fundT: tog("fundOpen", fundAll.length, 5),
+pubT: tog("pubOpen", 99, 0),
+scholT: tog("scholOpen", scholAll.length, 3),
 sent: this.state.sent,
 notSent: !this.state.sent,
 fac: this.state.fac,
