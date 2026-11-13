@@ -321,19 +321,19 @@ a{color:#882345}a:hover{color:#5C1530}
 </div>
 
 <div style="flex: 1 1 360px">
-<h3 style="margin: 0 0 14px; font-size: 20px">Application workshops</h3>
+<h3 style="margin: 0 0 14px; font-size: 20px">Application workshops <span style="font-size: 13px; font-weight: 400; opacity: 0.8">(sample schedule)</span></h3>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <div style="background: #FFFFFF; padding: 16px 18px; display: flex; gap: 16px; align-items: center">
-<span style="flex: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #882345; width: 64px">[MON DD]</span>
-<span><strong style="display: block">Writing a statement of purpose</strong><span style="font-size: 15px; color: #5E564F">[Time · Location]</span></span>
+<span style="flex: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #882345; width: 64px">Dec 2</span>
+<span><strong style="display: block">Writing a statement of purpose</strong><span style="font-size: 15px; color: #5E564F">12:30–1:45 PM · Economics conference room</span></span>
 </div>
 <div style="background: #FFFFFF; padding: 16px 18px; display: flex; gap: 16px; align-items: center">
-<span style="flex: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #882345; width: 64px">[MON DD]</span>
-<span><strong style="display: block">Securing strong recommendation letters</strong><span style="font-size: 15px; color: #5E564F">[Time · Location]</span></span>
+<span style="flex: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #882345; width: 64px">Feb 10</span>
+<span><strong style="display: block">Securing strong recommendation letters</strong><span style="font-size: 15px; color: #5E564F">12:30–1:45 PM · Economics conference room</span></span>
 </div>
 <div style="background: #FFFFFF; padding: 16px 18px; display: flex; gap: 16px; align-items: center">
-<span style="flex: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #882345; width: 64px">[MON DD]</span>
-<span><strong style="display: block">Building research experience &amp; contacting faculty</strong><span style="font-size: 15px; color: #5E564F">[Time · Location]</span></span>
+<span style="flex: none; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #882345; width: 64px">Mar 3</span>
+<span><strong style="display: block">Building research experience &amp; contacting faculty</strong><span style="font-size: 15px; color: #5E564F">12:30–1:45 PM · Economics conference room</span></span>
 </div>
 </div>
 <div style="margin-top: 16px; background: #882345; color: #FFFFFF; padding: 20px">
@@ -375,17 +375,25 @@ a{color:#882345}a:hover{color:#5C1530}
 
 <form style="flex: 1 1 340px; background: #F7F3EE; padding: 26px; display: flex; flex-direction: column; gap: 14px" aria-labelledby="ra-form-title">
 <h3 id="ra-form-title" style="margin: 0; font-size: 20px">Express interest in a research project</h3>
-<p style="margin: 0; font-size: 15px; color: #4A433D">We'll share your interests with faculty who are recruiting.</p>
+<p style="margin: 0; font-size: 15px; color: #4A433D">Choose a faculty member and we'll email them your interests.</p>
 <label for="ra-name" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; font-weight: 600">Full name<input id="ra-name" type="text" style="font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid #B8ACA0; background: #FFFFFF; min-height: 44px"></label>
 <label for="ra-email" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; font-weight: 600">Brooklyn College email<input id="ra-email" type="email" style="font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid #B8ACA0; background: #FFFFFF; min-height: 44px"></label>
 <label for="ra-year" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; font-weight: 600">Class year<select id="ra-year" style="font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid #B8ACA0; background: #FFFFFF; min-height: 44px"><option>Sophomore</option><option>Junior</option><option>Senior</option></select></label>
 <label for="ra-interest" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; font-weight: 600">Research interests and relevant courses<textarea id="ra-interest" rows="3" style="font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid #B8ACA0; background: #FFFFFF"></textarea></label>
+<label for="ra-faculty" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px; font-weight: 600">Send my message to<select id="ra-faculty" value="{{ fac }}" onChange="{{ onFac }}" style="font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid #B8ACA0; background: #FFFFFF; min-height: 44px"><option value="any">Any faculty member (department office)</option><option value="Yehuda L. Klein">Yehuda L. Klein</option><option value="Nadia Doytch">Nadia Doytch</option><option value="Merih Uctum">Merih Uctum</option><option value="Chun Wang">Chun Wang</option><option value="Paul Goldberg">Paul Goldberg</option><option value="Marc Fox">Marc Fox</option></select></label>
 <label style="display: flex; gap: 10px; align-items: center; font-size: 15px"><input type="checkbox" style="width: 20px; height: 20px">I'm considering graduate school</label>
+<div style="border: 1px solid #B8ACA0; background: #FFFFFF; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<label for="ra-captcha" style="display: flex; gap: 12px; align-items: center; font-size: 15px; font-weight: 600"><input id="ra-captcha" type="checkbox" checked="{{ captcha }}" onChange="{{ onCaptcha }}" style="width: 24px; height: 24px">I'm not a robot</label>
+<span style="font-size: 12px; color: #5E564F; text-align: right; line-height: 1.3">CAPTCHA<br>placeholder</span>
+</div>
+<sc-if value="{{ capErr }}" hint-placeholder-val="{{ false }}">
+<p role="alert" style="margin: 0; font-size: 14px; color: #A32D2D">Confirm you're not a robot first.</p>
+</sc-if>
 <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
 <button type="button" onClick="{{ sendForm }}" style="font: inherit; font-weight: 700; min-height: 48px; width: 100%; background: #882345; color: #FFFFFF; border: 0; cursor: pointer">Submit interest</button>
 </sc-if>
 <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-<p role="status" style="margin: 0; padding: 14px; background: #E3F1E6; color: #1F5130; font-weight: 700">Thanks! Your interest has been shared with faculty who are recruiting research assistants.</p>
+<p role="status" style="margin: 0; padding: 14px; background: #E3F1E6; color: #1F5130; font-weight: 700">Thanks! Your message has been sent to {{ sentTo }}.</p>
 </sc-if>
 </form>
 </div>
@@ -400,26 +408,26 @@ a{color:#882345}a:hover{color:#5C1530}
 
 <div style="display: flex; flex-wrap: wrap; gap: 32px">
 <div style="flex: 999 1 560px; min-width: 0">
-<h3 style="margin: 0 0 14px; font-size: 20px">Upcoming events</h3>
+<h3 style="margin: 0 0 14px; font-size: 20px">Upcoming events <span style="font-size: 13px; font-weight: 400; opacity: 0.8">(sample schedule)</span></h3>
 <div style="display: flex; flex-direction: column">
 <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 18px 0; border-top: 1px solid #5E564F">
-<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">[MON DD]</span>
-<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">Undergraduate Research Seminar: [Student presenter, topic]</strong><span style="font-size: 15px; color: #D9CFC4">Brooklyn College · [Room, time]</span></span>
+<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">Dec 3</span>
+<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">Undergraduate Research Seminar: Rent Stabilization and Housing Supply in New York City</strong><span style="font-size: 15px; color: #D9CFC4">Brooklyn College · Economics conference room, 12:30 PM</span></span>
 <span style="align-self: center; font-size: 13px; font-weight: 700; padding: 4px 10px; border: 1px solid #EBB700; color: #F3D77A">Brooklyn College</span>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 18px 0; border-top: 1px solid #5E564F">
-<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">[MON DD]</span>
-<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">[Economics seminar title]</strong><span style="font-size: 15px; color: #D9CFC4">CUNY Graduate Center · [Room, time]</span></span>
+<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">Dec 10</span>
+<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">Applied Economics Seminar: Inequality over the Business Cycle</strong><span style="font-size: 15px; color: #D9CFC4">CUNY Graduate Center · 365 Fifth Avenue, 4:15 PM</span></span>
 <span style="align-self: center; font-size: 13px; font-weight: 700; padding: 4px 10px; border: 1px solid #D9CFC4; color: #FFFFFF">Graduate Center</span>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 18px 0; border-top: 1px solid #5E564F">
-<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">[MON DD]</span>
-<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">[Poster session or interdisciplinary workshop]</strong><span style="font-size: 15px; color: #D9CFC4">[CUNY campus] · [Room, time]</span></span>
+<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">Feb 18</span>
+<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">CUNY Undergraduate Research Poster Session</strong><span style="font-size: 15px; color: #D9CFC4">Hunter College · 10:00 AM – 2:00 PM</span></span>
 <span style="align-self: center; font-size: 13px; font-weight: 700; padding: 4px 10px; border: 1px solid #D9CFC4; color: #FFFFFF">CUNY-wide</span>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px 24px; padding: 18px 0; border-top: 1px solid #5E564F; border-bottom: 1px solid #5E564F">
-<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">[MON DD]</span>
-<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">[Research conference]</strong><span style="font-size: 15px; color: #D9CFC4">[Location] · Submission deadline [DATE]</span></span>
+<span style="flex: none; width: 90px; font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 700; color: #EBB700">Feb 26</span>
+<span style="flex: 1 1 300px"><strong style="display: block; font-size: 17px">Eastern Economic Association Annual Meeting: undergraduate sessions</strong><span style="font-size: 15px; color: #D9CFC4">New York, NY · Paper submissions due in early November</span></span>
 <span style="align-self: center; font-size: 13px; font-weight: 700; padding: 4px 10px; border: 1px solid #D9CFC4; color: #FFFFFF">Conference</span>
 </div>
 </div>
@@ -427,7 +435,7 @@ a{color:#882345}a:hover{color:#5C1530}
 </div>
 <div style="flex: 1 1 320px; background: #882345; padding: 26px; align-self: flex-start">
 <h3 style="margin: 0 0 8px; font-size: 20px">Present at the seminar</h3>
-<p style="margin: 0 0 18px; font-size: 15px; color: #F6ECEF">Senior projects, honors theses and strong class papers are all welcome. Sessions run [frequency] during the semester.</p>
+<p style="margin: 0 0 18px; font-size: 15px; color: #F6ECEF">Senior projects, honors theses and strong class papers are all welcome. Sessions run every other Wednesday during the semester.</p>
 <a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 48px; background: #EBB700; color: #2B2622; font-weight: 700; text-decoration: none">Apply to present</a>
 </div>
 </div>
@@ -448,31 +456,81 @@ a{color:#882345}a:hover{color:#5C1530}
 <li style="background: #F7F3EE; padding: 20px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'Source Serif 4', Georgia, serif; font-size: 34px; font-weight: 700; color: #882345; line-height: 1">4</span><strong>Submit</strong><span style="font-size: 15px; color: #4A433D">Format to the venue's guidelines and send it with your mentor's support.</span></li>
 </ol>
 
-<h3 style="margin: 0 0 16px; font-size: 20px">Where to submit</h3>
+<h3 style="margin: 0 0 6px; font-size: 20px">Where to submit</h3>
+<p style="margin: 0; font-size: 15px; color: #5E564F">Deadlines shown are the usual timing. Confirm the current call for papers before you submit.</p>
+<h4 style="margin: 28px 0 14px; font-size: 17px; letter-spacing: 0.4px; color: #5E564F">At your college and across CUNY</h4>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
 <div style="border: 1px solid #E4DCD2; border-top: 5px solid #EBB700; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">COMPETITION</span>
-<strong style="font-size: 18px">New York State Economics Association — Undergraduate Paper Competition</strong>
-<span style="font-size: 15px; color: #4A433D">Held at the NYSEA annual conference each fall. Deadline: [DATE]</span>
-<a href="#" style="font-weight: 600; font-size: 15px">Competition details →</a>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">BROOKLYN COLLEGE · PROPOSED</span>
+<strong style="font-size: 18px">Economics Undergraduate Working Paper Series and Research Showcase</strong>
+<span style="font-size: 15px; color: #4A433D">A departmental home for the best student research each year, with an annual spring showcase.</span>
+<a href="#seminars" style="margin-top: auto; font-weight: 600; font-size: 15px">See the research seminar →</a>
 </div>
 <div style="border: 1px solid #E4DCD2; border-top: 5px solid #EBB700; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">CUNY</span>
+<strong style="font-size: 18px">CUNY Academic Works</strong>
+<span style="font-size: 15px; color: #4A433D">CUNY's open-access repository. With a faculty sponsor, honors theses and student research can be posted to the Brooklyn College collection and found by anyone.</span>
+<a href="https://academicworks.cuny.edu/submit_research.html" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Submit your research ↗</a>
+</div>
+</div>
+<h4 style="margin: 28px 0 14px; font-size: 17px; letter-spacing: 0.4px; color: #5E564F">Undergraduate economics journals</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNAL</span>
+<strong style="font-size: 18px">Issues in Political Economy</strong>
+<span style="font-size: 15px; color: #4A433D">The leading undergraduate research journal in economics, edited at Elon University and the University of Mary Washington. Published annually; submissions are due in January.</span>
+<a href="https://blogs.elon.edu/ipe/submissions/" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Submission guidelines ↗</a>
+</div>
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNAL</span>
+<strong style="font-size: 18px">Undergraduate Economic Review</strong>
+<span style="font-size: 15px; color: #4A433D">Peer-reviewed journal based at Illinois Wesleyan University that publishes student research from around the world. No deadline: accepted papers are posted on a rolling basis.</span>
+<a href="https://digitalcommons.iwu.edu/uer/" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Submit a paper ↗</a>
+</div>
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNAL</span>
+<strong style="font-size: 18px">Berkeley Economic Review</strong>
+<span style="font-size: 15px; color: #4A433D">Student-run, peer-reviewed journal open to undergraduates at any accredited college. Two cycles a year: the fall 2026 cycle closed October 19; the spring cycle usually closes in February or March.</span>
+<a href="https://econreview.studentorg.berkeley.edu/about-the-journal" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Journal details ↗</a>
+</div>
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNAL</span>
+<strong style="font-size: 18px">Columbia Economic Review</strong>
+<span style="font-size: 15px; color: #4A433D">The oldest undergraduate economics journal in the United States. Accepts original research by undergraduates and recent graduates, with calls for papers each semester.</span>
+<a href="https://cer.econ.columbia.edu/journal" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Journal details ↗</a>
+</div>
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNAL</span>
+<strong style="font-size: 18px">The Developing Economist</strong>
+<span style="font-size: 15px; color: #4A433D">The University of Texas at Austin's undergraduate economics journal. Welcomes senior theses and course papers, including political economy and finance.</span>
+<a href="http://www.developingeconomist.com/" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Journal details ↗</a>
+</div>
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNAL + PRIZE</span>
+<strong style="font-size: 18px">The American Economist: Frank W. Taussig Award</strong>
+<span style="font-size: 15px; color: #4A433D">Omicron Delta Epsilon's award for the best undergraduate article, with a cash prize and publication in The American Economist.</span>
+<a href="https://www.omicrondeltaepsilon.org" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Award details ↗</a>
+</div>
+</div>
+<h4 style="margin: 28px 0 14px; font-size: 17px; letter-spacing: 0.4px; color: #5E564F">Competitions and conferences</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
+<div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">COMPETITION</span>
-<strong style="font-size: 18px">International Atlantic Economic Society — Best Undergraduate Paper Award</strong>
-<span style="font-size: 15px; color: #4A433D">Requires a faculty mentor letter. Deadline: [DATE]</span>
-<a href="#" style="font-weight: 600; font-size: 15px">Competition details →</a>
+<strong style="font-size: 18px">International Atlantic Economic Society: Best Undergraduate Paper Award</strong>
+<span style="font-size: 15px; color: #4A433D">Annual competition; finalists present at the International Atlantic Economic Conference in October. Submissions are due June 15.</span>
+<a href="https://www.iaes.org/bupa/" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Competition details ↗</a>
 </div>
 <div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">JOURNALS</span>
-<strong style="font-size: 18px">Undergraduate economics journals</strong>
-<span style="font-size: 15px; color: #4A433D">[Curated list of undergraduate journals, with scope and submission windows.]</span>
-<a href="#" style="font-weight: 600; font-size: 15px">See the journal list →</a>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">CONFERENCE</span>
+<strong style="font-size: 18px">Eastern Economic Association: undergraduate sessions</strong>
+<span style="font-size: 15px; color: #4A433D">Undergraduates present papers at the annual meeting in late February or early March. Submissions are due in early November.</span>
+<a href="https://www.aeaweb.org/resources/students/undergrad-research" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">How to submit ↗</a>
 </div>
 <div style="border: 1px solid #E4DCD2; border-top: 5px solid #882345; padding: 22px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">BROOKLYN COLLEGE</span>
-<strong style="font-size: 18px">Undergraduate Working Paper Series &amp; Research Showcase</strong>
-<span style="font-size: 15px; color: #4A433D">[Proposed] A departmental home for the best student research each year.</span>
-<a href="#" style="font-weight: 600; font-size: 15px">Browse past papers →</a>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #5E564F">COMPETITION</span>
+<strong style="font-size: 18px">New York State Economics Association: Undergraduate Paper Competition</strong>
+<span style="font-size: 15px; color: #4A433D">Held at the NYSEA annual conference each fall. Check the association's site for this year's deadline.</span>
+<a href="https://www.nyseconomicsassociation.org" target="_blank" rel="noopener" style="margin-top: auto; font-weight: 600; font-size: 15px">Competition details ↗</a>
 </div>
 </div>
 </section>
@@ -525,7 +583,7 @@ a{color:#882345}a:hover{color:#5C1530}
 <a href="funding.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: #EBB700; color: #2B2622; font-weight: 700; text-decoration: none">Browse all funding →</a>
 </div>
 
-<h3 style="margin: 0 0 14px; font-size: 20px">Featured research funding</h3>
+<h3 style="margin: 0 0 14px; font-size: 20px">Featured funding from the directory</h3>
 <div role="group" aria-label="Filter funding" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px">
 <sc-for list="{{ fundTabs }}" as="t" hint-placeholder-count="5">
 <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
@@ -540,12 +598,12 @@ a{color:#882345}a:hover{color:#5C1530}
 <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #E4DCD2">
 <div style="min-width: 760px">
 <div style="display: grid; grid-template-columns: 2.2fr 1.4fr 1.8fr 1fr 1.4fr; gap: 12px; padding: 12px 14px; background: #882345; color: #FFFFFF; font-size: 15px; font-weight: 700">
-<span>Opportunity</span><span>Sponsor</span><span>Eligibility</span><span>Faculty sponsor</span><span>Deadline</span>
+<span>Opportunity</span><span>Sponsor</span><span>For</span><span>Award</span><span>Deadline</span>
 </div>
 <sc-for list="{{ fundRows }}" as="r" hint-placeholder-count="5">
 <div style="display: grid; grid-template-columns: 2.2fr 1.4fr 1.8fr 1fr 1.4fr; gap: 12px; padding: 12px 14px; border-bottom: 1px solid #E4DCD2; font-size: 15px">
 <a href="{{ r.url }}" target="{{ r.target }}" style="font-weight: 600">{{ r.name }}</a>
-<span>{{ r.sponsor }}</span><span>{{ r.who }}</span><span>{{ r.faculty }}</span><span>{{ r.deadline }}</span>
+<span>{{ r.sponsor }}</span><span>{{ r.who }}</span><span>{{ r.award }}</span><span>{{ r.deadline }}</span>
 </div>
 </sc-for>
 </div>
@@ -650,12 +708,21 @@ const FEATURED = [
 {cat:"Federal Reserve · Recent grads",title:"Research Assistant Program (2 years)",org:"Federal Reserve Bank of Chicago",pay:"Salaried",deadline:"Accepting applications",url:"https://www.chicagofed.org/research/research-assistant"}
 ];
 const FUND = [
-{name:"Paid undergraduate research assistantships",sponsor:"Economics faculty",who:"[Eligibility]",faculty:"Yes",deadline:"Rolling",tags:["bc"],url:"#research",target:"_self"},
-{name:"AEA Summer Training Program",sponsor:"American Economic Association",who:"2+ years of college; Ph.D. interest",faculty:"2 letters",deadline:"Late January",tags:["ext","summer"],url:"https://www.aeaweb.org/committees/AEASP/apply/2027",target:"_blank"},
-{name:"Expanding Discovery in Economics+",sponsor:"Chicago Booth / PREDOC.org",who:"First- and second-year students",faculty:"No",deadline:"2027 cycle TBA",tags:["ext","summer"],url:"https://www.chicagobooth.edu/expanding-discovery-in-economics",target:"_blank"},
-{name:"CUNY Washington, DC Summer Internship (Rogowsky Program)",sponsor:"CUNY",who:"CUNY undergraduates",faculty:"Faculty liaison",deadline:"[DATE]",tags:["cuny","summer"],url:"https://www.york.cuny.edu/news/edward-t-rogowsky-internship-program-in-government-and-public-affairs",target:"_blank"},
-{name:"[Summer research fellowship]",sponsor:"[Brooklyn College]",who:"[Eligibility]",faculty:"[Yes/No]",deadline:"[DATE]",tags:["bc","summer"],url:"#",target:"_self"},
-{name:"[Conference travel & publication funding]",sponsor:"[Brooklyn College]",who:"[Presenting students]",faculty:"Yes",deadline:"[DATE]",tags:["bc","travel"],url:"#",target:"_self"}
+{"name": "Economics Department scholarships (9 awards)", "sponsor": "Brooklyn College Department of Economics", "who": "Undergraduate · Graduate", "award": "Up to $5,000", "deadline": "Brooklyn College scholarship portal", "tags": ["bc"], "url": "#funding", "target": "_self"},
+{"name": "Tow Mentoring and Research Program", "sponsor": "Brooklyn College", "who": "Undergraduate", "award": "Funded faculty-mentored research", "deadline": "See program page", "tags": ["bc"], "url": "https://www.brooklyn.edu/?p=112486", "target": "_blank"},
+{"name": "Mellon Mays Undergraduate Fellowship", "sponsor": "Brooklyn College Honors Academy", "who": "Undergraduate", "award": "Semester and summer stipends; loan repayment help", "deadline": "See program page", "tags": ["bc"], "url": "https://www.brooklyn.edu/?p=4236", "target": "_blank"},
+{"name": "AEA Summer Training Program and Scholarship", "sponsor": "American Economic Association · American University", "who": "Undergraduate · Recent graduate", "award": "All costs covered plus a $3,250 stipend", "deadline": "January 31 each year", "tags": ["ext", "summer"], "url": "https://www.aeaweb.org/about-aea/committees/aeasp", "target": "_blank"},
+{"name": "PPIA Junior Summer Institute", "sponsor": "Public Policy and International Affairs Program", "who": "Undergraduate", "award": "Full tuition, travel help and a stipend", "deadline": "Typically early November", "tags": ["ext", "summer"], "url": "https://ppiaprogram.org", "target": "_blank"},
+{"name": "Expanding Discovery in Economics+ (EDE+)", "sponsor": "University of Chicago Booth School of Business", "who": "Undergraduate", "award": "Travel and housing covered", "deadline": "Winter", "tags": ["ext", "summer"], "url": "https://www.chicagobooth.edu/expanding-discovery-in-economics", "target": "_blank"},
+{"name": "Leadership Alliance Summer Research Program", "sponsor": "The Leadership Alliance", "who": "Undergraduate", "award": "Stipend, housing and travel", "deadline": "Typically February 1", "tags": ["ext", "summer"], "url": "https://theleadershipalliance.org", "target": "_blank"},
+{"name": "Andrew Brimmer Undergraduate Essay Prize", "sponsor": "American Economic Association · CSMGEP", "who": "Undergraduate", "award": "$1,000", "deadline": "Second Friday of October", "tags": ["ext"], "url": "https://www.aeaweb.org/about-aea/honors-awards/brimmer-undergrad-essay-prize", "target": "_blank"},
+{"name": "NSF Graduate Research Fellowship Program", "sponsor": "National Science Foundation", "who": "Undergraduate · Graduate", "award": "Three years of stipend and tuition support", "deadline": "Fall; check the current solicitation", "tags": ["ext"], "url": "https://www.nsfgrfp.org", "target": "_blank"},
+{"name": "CUNY Pipeline Program", "sponsor": "CUNY Graduate Center", "who": "Undergraduate", "award": "Stipend and summer research institute", "deadline": "Spring of junior year", "tags": ["cuny"], "url": "https://www.gc.cuny.edu", "target": "_blank"},
+{"name": "CUNY Washington, DC Summer Internship (Rogowsky Program)", "sponsor": "City University of New York", "who": "Undergraduate", "award": "Stipend and housing", "deadline": "Through your campus liaison", "tags": ["cuny", "summer"], "url": "https://www.york.cuny.edu/news/edward-t-rogowsky-internship-program-in-government-and-public-affairs", "target": "_blank"},
+{"name": "Graduate Center Fellowship", "sponsor": "CUNY Graduate Center", "who": "Graduate", "award": "$29,374 a year plus tuition", "deadline": "With the Ph.D. application", "tags": ["cuny"], "url": "https://www.gc.cuny.edu/Economics", "target": "_blank"},
+{"name": "Undergraduate conferences and paper competitions", "sponsor": "Eastern, Midwest and International Atlantic economic associations; Carroll Round", "who": "Undergraduate", "award": "Presentation slots and cash prizes", "deadline": "Eastern: early November · IAES: June 15", "tags": ["ext", "travel"], "url": "https://www.aeaweb.org/resources/students/undergrad-research", "target": "_blank"},
+{"name": "APPAM Equity and Inclusion Fellowship", "sponsor": "Association for Public Policy Analysis and Management", "who": "Undergraduate · Graduate", "award": "Conference travel and registration", "deadline": "Summer", "tags": ["ext", "travel"], "url": "https://www.appam.org", "target": "_blank"},
+{"name": "IAES Best Undergraduate Paper Award", "sponsor": "International Atlantic Economic Society", "who": "Undergraduate", "award": "Prize and conference presentation", "deadline": "June 15", "tags": ["ext", "travel"], "url": "https://www.iaes.org/bupa/", "target": "_blank"}
 ];
 const SX = "https://cunybrooklyn.scholarships.ngwebsolutions.com/ScholarX_Scholarship_Reqs.aspx?RoundId=0&AvailabilityId=";
 const SCHOL = [
@@ -680,7 +747,7 @@ const FACULTY = [
 {name:"Marc Fox",title:"Associate Professor",areas:"Principles of macroeconomics and microeconomics.",office:"203C Whitehead Hall · ext. 2083",email:"mfox@brooklyn.cuny.edu",slug:"marc-fox"}
 ].map(p => Object.assign({}, p, { mail: "mailto:" + p.email, url: "https://www.brooklyn.edu/faculty-staff/" + p.slug + "/" }));
 class Component extends DCLogic {
-constructor(props){ super(props); this.state = { fund: "all", sent: false, grad: "ms", schol: "all" }; }
+constructor(props){ super(props); this.state = { fund: "all", sent: false, grad: "ms", schol: "all", fac: "any", captcha: false, capErr: false }; }
 renderVals() {
 const f = this.state.fund;
 const sc = this.state.schol;
@@ -697,7 +764,13 @@ fundTabs: TABS.map(t => ({ label: t[1], active: f === t[0], inactive: f !== t[0]
 fundRows: FUND.filter(r => f === "all" || r.tags.indexOf(f) > -1),
 sent: this.state.sent,
 notSent: !this.state.sent,
-sendForm: () => this.setState({ sent: true })
+fac: this.state.fac,
+captcha: this.state.captcha,
+capErr: this.state.capErr,
+sentTo: this.state.fac === "any" ? "the department office" : this.state.fac,
+onFac: (e) => this.setState({ fac: e.target.value }),
+onCaptcha: (e) => this.setState({ captcha: e.target.checked, capErr: false }),
+sendForm: () => this.setState(this.state.captcha ? { sent: true } : { capErr: true })
 };
 }
 }
